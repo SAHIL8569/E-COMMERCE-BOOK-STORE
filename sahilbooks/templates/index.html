@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<div class="jumbotron jumbotron-fluid card card-image" style="background-image: url('../static/img/BOOKSHELVES.jpeg');">
+    <div class="text-white text-center py-5 px-4">
+        <div>
+            <h1 class="display-2">Welcome to Sahil Books</h1>
+            <p class="display-4 text-info">Start your knowledge journey from here</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<section class="container-fluid bg-book">
+    <div class="container">
+        <div class="text-white text-center">
+            <div>
+                <p class="h1 text-info mb-4">Why us<span class="text-secondary">?</span></p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <article>
+                    <h2 class="text-white">Wide range of varieties</h2>
+                    <p>Want to fly in the fantasy of fairytales or make growth of knowledge?<br>get everything at one place </p>
+                    <ul>
+                        <li>Fantasy</li>
+                        <li>Finance</li>
+                    </ul>
+                </article>
+
+            </div>
+
+
+            <div class="col-md-4">
+                <article>
+                    <h2 class="text-white">Easy exchange offer</h2>
+                    <p class="text-olive">Are you avid reader but that started affecting your pocket</p>
+                    <p>Forget about budget, with motto of spreading knowledge we provide you great discount on exchange of your old books</p>
+                    <p class="text-navy">visit physically at store to sel you book</p>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article>
+                    <h2 class="text-white">Affordable selections</h2>
+                    <p>We have <span> great prices and offers </span> all year round!</p>
+                    <p>Click <a href="discounts.html" class="discount">here</a> for more information.</p>
+                </article>
+            </div>
+        </div>
+        <!-- Horizontal Rule -->
+        <hr>
+    </div>
+</section>
+
+<!-- display the books to the user -->
+<section class="bg-book-light py-5">
+    <div class="text-dark text-center">
+        <div>
+            <p class="h3 text-white mb-4" id="books_anchor">Pick a book</p>
+        </div>
+    </div>
+    <div class="card-deck">
+        <div class=" col-lg-3"></div>
+        {% for book in books %}
+        <div class="card col-lg-3 col-sm-12 py-2">
+            <img class="card-img-top" src="../static/img/{{book.image}}" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">{{book.title}}</h4>
+                <p class="card-text">{{book.description}}</p>
+            </div>
+            <div class="card-footer"><a href= "{{url_for('main.bookdetail', book_id=book.id)}}" class="btn book-btn">Book Detail</a></div>
+        </div>
+        {% endfor %}
+        <div class="col-lg-3"></div>
+    </div>
+</section>
+{% endblock %}
