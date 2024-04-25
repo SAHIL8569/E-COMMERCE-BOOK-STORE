@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sahil Books</title>
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='img/sahilbooks.png')}}">
+    <meta name="description" content="Sahil Books">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- an example of using css alongside bootstrap -->
+
+</head>
+
+<body>
+    <!-- putting header inside container will prevent full width navbar -->
+
+    <header>
+
+        <!--navbar creates a navigation bar -->
+        <!-- Colours https://getbootstrap.com/docs/4.6/utilities/colors/ -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-book">
+
+            <a class="navbar-brand text-light" href="{{url_for('main.index')}}">
+                <img src="{{url_for('static', filename='img/sahilbooks.png')}}" width="30" height="30" class="d-inline-block align-top"
+                    alt="Sahil Books Logo">
+                Sahil Books
+            </a>
+
+            <!-- create a button for collapsing the menu -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- individual menu item-->
+                <a class="nav-item nav-link active" href="about.html">About Us</a>
+
+                <!-- individual menu item-->
+                <a class="nav-item nav-link" href="{{url_for('main.index', _anchor='books_anchor')}}">Books</a>
+
+                <!-- individual menu item-->
+                <a class="nav-item nav-link" href="{{url_for('main.order')}}">Basket</a>
+
+                <!-- test of 404 page-->
+                <a class="nav-item nav-link" href="clients.html">Our Clients</a>
+
+                <!-- right aligned menu items thanks to ml-auto -->
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <!-- text like phone number -->
+                        <span class="navbar-contact nav-item nav-link"><a href="tel: +61420562762">+61420562762</a></span>
+                    </li>
+                    <li class="nav-item">
+                        <!-- search box -->
+                        <form class="form-inline my-2 my-lg-0 ml-5" action="{{url_for('main.search')}}">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search">
+                            <button class="search-btn btn-outline-black btn btn-secondary btn-s my-0 ml-1" type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+
+        </nav>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-primary m-2" role="alert">
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %} 
+
+        {% block head %}
+        
+        {% endblock %}
+
+    </header>
+
+
+    <!-- main page content goes in container -->
+    <div class="container-fluid">
+        <main>
+            {% block main %}
+            
+            {% endblock %}
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Copyright &copy; Sahil Books</p>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

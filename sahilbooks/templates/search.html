@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<!-- display contents of user basket -->
+<section>  
+    <div class="container">
+
+        <!-- each tour on seperate row -->
+        {% for book in books %}
+        <div class="row">
+x
+            <div class="row shadow-md my-row mb-3">
+                <div class="col-10 card">
+                    <h5 class="card-header">{{book.name}}</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <img class="img-thumbnail" src="{{url_for('static', filename=('img/' + book.image))}}">
+                            </div>
+                            <div class="col-10">
+                                <!-- Item Description -->
+                                <p class="card-text">{{book.description}}</p>   
+                            </div>  
+                        </div>                      
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="card-footer">
+                        <form action="{{url_for('main.order')}}">
+                            <input type="hidden" id="book_id" name="book_id" value="{{book.id}}">
+                            <input class="btn book-btn" type="submit" value="Add to Basket">
+                        </form>
+                    </div> 
+                </div>
+                
+                
+                
+            </div>
+            
+        </div>
+            {% endfor %}
+        </div>
+</section>
+
+{% endblock %}

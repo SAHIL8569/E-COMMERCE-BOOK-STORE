@@ -1,0 +1,116 @@
+.my-row {
+    border: 1px solid grey;
+}
+
+.search-btn
+{
+    background-color: aliceblue !important;
+    color: rgb(190, 124, 43) !important;
+}
+
+.search-btn:hover
+{
+    background-color: black;
+    color: aliceblue;
+}
+
+.bg-book
+{
+    background-color: rgb(190, 124, 43);
+}
+
+.bg-book-light
+{
+    background-color: rgb(92, 43, 190);
+}
+
+.book-btn
+{
+    background-color: rgb(190, 124, 43);
+    color: white;
+}
+
+.book-btn:hover
+{
+    background-color: rgb(11, 0, 167);
+    color: rgb(190, 124, 43);
+}
+
+.bg-navy
+{
+    background-color: blue;
+}
+
+.text-navy
+{
+    color: blue;
+}
+
+.text-olive
+{
+    color: rgb(21, 255, 0);
+}
+
+a:hover
+{
+    text-decoration: none;
+    color: aliceblue !important;
+}
+
+.discount
+{
+    color: aliceblue;
+}
+
+.discount:hover
+{
+    color: red !important;
+}
+
+.card-body 
+{
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    height: 200px;
+}
+
+.card-img, .card-img-bottom, .card-img-top 
+{
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 350px !important;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl 
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.nav-link
+{
+    color: rgb(234, 234, 234) !important;
+}
+
+.nav-link:hover
+{
+    color: blue !important;
+}
+
+a
+{
+   color:  #2e00ff !important;
+}
+
+.jumbotron
+{
+    margin-bottom: 0% !important;
+}
+
+.btn .btn-primary .btn-md
+{
+    background-color: rgb(190, 124, 43) !important;
+}
